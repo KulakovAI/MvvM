@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvM.MainPage"
+             Title="MvvW Employee">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="5"
+            Padding="10"
+            VerticalOptions="Start">
+            <Label Text="{Binding FIO}" FontSize="Medium" />
+            <Label Text="{Binding Stuff}" FontSize="Medium" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Text="{Binding Salary}" FontSize="Medium" Grid.Column="0" Grid.Row="0"/>
+                <HorizontalStackLayout Grid.Column="1" Grid.Row="0" Spacing="10" Margin="5">
+                    <Button Text="+" Command="{Binding IncreaseSalary}" CornerRadius="25"
+                        WidthRequest="40" HeightRequest="40"
+                        BackgroundColor="White" BorderColor="Black" TextColor="Black" BorderWidth="1"/>
+                    <Button Text="-" Command="{Binding DecreaseSalary}" CornerRadius="25"
+                        WidthRequest="40" HeightRequest="40"
+                        BackgroundColor="White" BorderColor="Black" TextColor="Black" BorderWidth="1"/>
+                </HorizontalStackLayout>
+                
+                <Label Text="{Binding Exp}" FontSize="Medium" Grid.Column="0" Grid.Row="1"/>
+                
+                <HorizontalStackLayout Grid.Column="1" Grid.Row="1" Spacing="10" Margin="5">
+                    <Button Text="+" Command="{Binding IncreaseExp}" CornerRadius="25"
+                        WidthRequest="40" HeightRequest="40"
+                        BackgroundColor="White" BorderColor="Black" TextColor="Black" BorderWidth="1"/>
+                    <Button Text="-" Command="{Binding DecreaseExp}" CornerRadius="25"
+                        WidthRequest="40" HeightRequest="40"
+                        BackgroundColor="White" BorderColor="Black" TextColor="Black" BorderWidth="1"/>
+                </HorizontalStackLayout>
+                <Label Text="{Binding Factor}" FontSize="Medium" Grid.Column="0" Grid.Row="2"/>
+                
+                <HorizontalStackLayout Grid.Column="1" Grid.Row="2" Spacing="10" Margin="5">
+                    <Button Text="+" Command="{Binding IncreaseFactor}" CornerRadius="25"
+                        WidthRequest="40" HeightRequest="40"
+                        BackgroundColor="White" BorderColor="Black" TextColor="Black" BorderWidth="1"/>
+                    <Button Text="-" Command="{Binding DecreaseFactor}" CornerRadius="25"
+                        WidthRequest="40" HeightRequest="40"
+                        BackgroundColor="White" BorderColor="Black" TextColor="Black" BorderWidth="1"/>
+                </HorizontalStackLayout>
+                </Grid>
+                <Button Text="Рассчитать" Command="{Binding Calc}" WidthRequest="120" Margin="10"
+                    BackgroundColor="White" BorderColor="Black" TextColor="Black" BorderWidth="1"/>
+                <Label Text="{Binding Prize}" FontSize="Medium"/>
+        </VerticalStackLayout>
+    </ScrollView>        
+</ContentPage>
